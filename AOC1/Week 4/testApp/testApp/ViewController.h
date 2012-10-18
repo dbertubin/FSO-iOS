@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+{
+    UITextField * userNameInput;
+    UILabel * feedBack;
+}
+
 @end
