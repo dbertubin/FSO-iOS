@@ -53,7 +53,7 @@
         userNameInput.borderStyle = UITextBorderStyleRoundedRect;
         [userNameInput addTarget:self action:@selector(textDone:) forControlEvents:UIControlEventEditingDidEndOnExit];//// gets rid of the keyboard by pressing return 
         [self.view addSubview:userNameInput ];
-        [userNameInput becomeFirstResponder];
+        //[userNameInput becomeFirstResponder];
     }
     
     //3. Create a rounded rectangle UIButton of any color under the UITextField with the text "Login" on it.
@@ -198,6 +198,8 @@
 {
     [self resignFirstResponder];
 }
+
+
 
 
 - (void)didReceiveMemoryWarning

@@ -26,4 +26,5 @@
 
 - (void)onClick:(UIButton *)button;
 - (void)textDone:(id)self;
+
 @end
