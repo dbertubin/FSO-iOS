@@ -51,7 +51,7 @@
     if (userNameInput != nil)
     {
         userNameInput.borderStyle = UITextBorderStyleRoundedRect;
-        [userNameInput addTarget:self action:@selector(textDone:) forControlEvents:UIControlEventEditingDidEndOnExit];//// gets rid of the keyboard by pressing return 
+        [userNameInput addTarget:self action:@selector(textDone:) forControlEvents:UIControlEventEditingDidEndOnExit];//// gets rid of the keyboard by pressing return
         [self.view addSubview:userNameInput ];
         //[userNameInput becomeFirstResponder];
     }
@@ -125,7 +125,7 @@
     }
     
     //2. Create a UILabel beneath it that contains no initial text.
-    infoLabel =[[UILabel alloc]initWithFrame:CGRectMake(15.0f, 410.0f, 290, 40)];
+    infoLabel =[[UILabel alloc]initWithFrame:CGRectMake(35.0f, 410.0f, 260, 40)];
     if (infoLabel != nil) {
         infoLabel.text = @"";
         infoLabel.textAlignment = NSTextAlignmentCenter;
@@ -151,49 +151,67 @@
 
 -(void)onClick:(UIButton *)button
 {
-    if (button.tag == BUTTON_LOGIN)
-    {
-        
-        //7. Hint: NSString has a property called length that tells you how many characters are in the string.
-        if (userNameInput.text.length != 0)
-        {   // Otherwise, display "User: username has been logged in".
-            feedBack.text = [NSString stringWithFormat:@"User: %@ has been logged in", userNameInput.text];
-            feedBack.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1] /*#000000*/ /*#ff0000*/;
-            
-        }
-        else
-        {   //6. If the user has not entered any text into the UITextField, display in the UILabel, "Username cannot be empty".
-            feedBack.text = @"Username cannot be empty";
-            feedBack.textColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1] /*#ff0000*/;
-        }
-    }
-    else if (button.tag == BUTTON_DATE)
-    {
-        //4. Display a UIAlertView with the current date and time displayed in the format seen in the dateAlert graphic in the assets section of this project assignment.
-        alertView = [[UIAlertView alloc] initWithTitle:@"Date" message:dateStr  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        if (alertView != nil)
+    switch (button.tag){
+        case BUTTON_LOGIN:
         {
-            [alertView show];
+            
+            //7. Hint: NSString has a property called length that tells you how many characters are in the string.
+            if (userNameInput.text.length != 0)
+            {   // Otherwise, display "User: username has been logged in".
+                feedBack.text = [NSString stringWithFormat:@"User: %@ has been logged in", userNameInput.text];
+                feedBack.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1] /*#000000*/ /*#ff0000*/;
+            }
+            else
+            {   //6. If the user has not entered any text into the UITextField, display in the UILabel, "Username cannot be empty".
+                feedBack.text = @"Username cannot be empty";
+                feedBack.textColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1] /*#ff0000*/;
+            }
         }
+            break;
+        case BUTTON_DATE:
+        {
+            //4. Display a UIAlertView with the current date and time displayed in the format seen in the dateAlert graphic in the assets section of this project assignment.
+            alertView = [[UIAlertView alloc] initWithTitle:@"Date" message:dateStr  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            if (alertView != nil)
+            {
+                [alertView show];
+            }
+        }
+            break;
+        case BUTTON_INFO:
+        {
+            //4. When the button is pressed, have the text "This application was created by: Firstname Lastname" appear in the info UILabel. Please replace firstname lastname with your name.
+            infoLabel.text = @"This application was created by:       Derek Bertubin";
+            infoLabel.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1]; /*;#ffffff*/
+            infoLabel.numberOfLines = 2;
+            infoLabel.textAlignment = NSTextAlignmentCenter;
+            
+            /******* I personally like the alert better ;)
+             alertView = [[UIAlertView alloc] initWithTitle:@"Info" message:@"This application was created by: Derek Betubin"  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+             if (alertView != nil)
+             {
+             [alertView show];
+             }*/
+        }
+            break;
+        default:
+        {
+            //error alertView object for default
+            errorAlert = [[UIAlertView alloc] initWithTitle:@"Opps!!!" message:@"Something went horribly wrong!" delegate:nil cancelButtonTitle:@"Eject!" otherButtonTitles:nil, nil];
+            if (errorAlert != nil) {
+                [errorAlert show];
+            }
+        }
+            break;
+            
     }
-    else if (button.tag == BUTTON_INFO)
-    {
-        //4. When the button is pressed, have the text "This application was created by: Firstname Lastname" appear in the info UILabel. Please replace firstname lastname with your name.
-        infoLabel.text = @"This application was created by:       Derek Bertubin";
-        infoLabel.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1]; /*;#ffffff*/
-        infoLabel.numberOfLines = 2;
-        infoLabel.textAlignment = NSTextAlignmentCenter;
-        
-        /******* I personally like the alert better ;)
-         alertView = [[UIAlertView alloc] initWithTitle:@"Info" message:@"This application was created by: Derek Betubin"  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-         if (alertView != nil)
-         {
-         [alertView show];
-         }*/
-    }
+    
+    
 }
 
--(void)textDone:(id)sender //// gets rid of the keyboad .. still want to know how to have the done button 
+
+
+-(void)textDone:(id)sender //// gets rid of the keyboad .. still want to know how to have the done button
 
 {
     [self resignFirstResponder];

@@ -22,6 +22,8 @@
     NSMutableString * dateStr;
     UIButton * infoButton;
     UILabel * infoLabel;
+    UIAlertView *errorAlert;
+
 }
 
 - (void)onClick:(UIButton *)button;
