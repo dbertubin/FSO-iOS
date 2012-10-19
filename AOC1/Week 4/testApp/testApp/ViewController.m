@@ -31,13 +31,13 @@
     //3. The project is divided up into three sections on a single page. The login portion, the date portion and the information section. Instructions for each section are separated out below.
     
     
-// ***********LOG IN **************************
+    // ***********LOG IN **************************
     //1. Create a UILabel near the top of your screen with the text "Username:" in it.
     userName = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 10.0f, 100, 25)];
     if (userName != nil) {
         
         userName.backgroundColor = [UIColor colorWithRed:0.541 green:0.537 blue:0.561 alpha:1]; /*#8a898f*/
-
+        
         userName.text = @"Username: ";
         userName.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1]; /*;#ffffff*/
         
@@ -51,7 +51,9 @@
     if (userNameInput != nil)
     {
         userNameInput.borderStyle = UITextBorderStyleRoundedRect;
-        [self.view addSubview:userNameInput];
+        [userNameInput addTarget:self action:@selector(textDone:) forControlEvents:UIControlEventEditingDidEndOnExit];//// gets rid of the keyboard by pressing return 
+        [self.view addSubview:userNameInput ];
+        [userNameInput becomeFirstResponder];
     }
     
     //3. Create a rounded rectangle UIButton of any color under the UITextField with the text "Login" on it.
@@ -59,6 +61,7 @@
     if (loginButton != nil)
     {
         loginButton.frame = CGRectMake(225.0f, 45.0f, 82, 30);
+        loginButton.tintColor = [UIColor colorWithRed:0.773 green:0.69 blue:0 alpha:1] /*#c5b000*/;
         [loginButton setTitle:@"Login" forState:UIControlStateNormal];
         
         loginButton.tag = BUTTON_LOGIN;
@@ -79,7 +82,7 @@
     }
     
     
-//******Date - this section will display a UIAlertView with the current date and time in it using an NSDate object.*****
+    //******Date - this section will display a UIAlertView with the current date and time in it using an NSDate object.*****
     
     //1. Create a UIButton  Give this button any color you wish.
     dateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -90,13 +93,13 @@
         
         //2. Add the text "Show Date" to the button
         [dateButton setTitle:@"Show Date" forState:UIControlStateNormal];
-        
+        dateButton.tintColor = [UIColor colorWithRed:0.773 green:0.69 blue:0 alpha:1] /*#c5b000*/;
         dateButton.tag = BUTTON_DATE;
         [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:dateButton];
         
     }
-    
+    //You can either format the date and time manually or use the date and time styles. You must use an NSDate object to gather the date and time information.
     date = [NSDate date];
     dateStr = [[NSMutableString alloc] initWithString:@""];
     dateFormater = [[NSDateFormatter alloc] init];
@@ -105,22 +108,24 @@
         
         [dateFormater setDateStyle:NSDateFormatterLongStyle];
         dateStr.string = [dateFormater stringFromDate:date];
-    
+        
     }
     
-//*****Information - this section will display the text "This application was created by: Firstname Lastname" in a label when the info button is clicked.
- 
+    //*****Information - this section will display the text "This application was created by: Firstname Lastname" in a label when the info button is clicked.
+    
     //1. Create a UIButton using either the light or dark info type and position it somewhere near the bottom of the screen.
     infoButton =[UIButton buttonWithType:UIButtonTypeInfoLight];
     if (infoButton != nil)
     {
-        infoButton.frame = CGRectMake(15.0f, 290.0f, 20, 20);
+        infoButton.frame = CGRectMake(15.0f, 380.0f, 20, 20);
         infoButton.tag = BUTTON_INFO;
+        //3. Hook up an action to the info button to have it call the onClick handler you created earlier.
         [infoButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:infoButton];
     }
     
-    infoLabel =[[UILabel alloc]initWithFrame:CGRectMake(0.0f, 420.0f, 320, 40)];
+    //2. Create a UILabel beneath it that contains no initial text.
+    infoLabel =[[UILabel alloc]initWithFrame:CGRectMake(15.0f, 410.0f, 290, 40)];
     if (infoLabel != nil) {
         infoLabel.text = @"";
         infoLabel.textAlignment = NSTextAlignmentCenter;
@@ -129,10 +134,10 @@
     }
     
     
-    //2. Create a UILabel beneath it that contains no initial text.
     
-    //3. Hook up an action to the info button to have it call the onClick handler you created earlier.
-    //4. When the button is pressed, have the text "This application was created by: Firstname Lastname" appear in the info UILabel. Please replace firstname lastname with your name.
+    
+    
+    
     
     
     
@@ -148,7 +153,7 @@
 {
     if (button.tag == BUTTON_LOGIN)
     {
-    
+        
         //7. Hint: NSString has a property called length that tells you how many characters are in the string.
         if (userNameInput.text.length != 0)
         {   // Otherwise, display "User: username has been logged in".
@@ -164,7 +169,7 @@
     }
     else if (button.tag == BUTTON_DATE)
     {
-        //4. Display a UIAlertView with the current date and time displayed in the format seen in the dateAlert graphic in the assets section of this project assignment. You can either format the date and time manually or use the date and time styles. You must use an NSDate object to gather the date and time information.
+        //4. Display a UIAlertView with the current date and time displayed in the format seen in the dateAlert graphic in the assets section of this project assignment.
         alertView = [[UIAlertView alloc] initWithTitle:@"Date" message:dateStr  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         if (alertView != nil)
         {
@@ -173,6 +178,7 @@
     }
     else if (button.tag == BUTTON_INFO)
     {
+        //4. When the button is pressed, have the text "This application was created by: Firstname Lastname" appear in the info UILabel. Please replace firstname lastname with your name.
         infoLabel.text = @"This application was created by:       Derek Bertubin";
         infoLabel.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1]; /*;#ffffff*/
         infoLabel.numberOfLines = 2;
@@ -180,12 +186,19 @@
         
         /******* I personally like the alert better ;)
          alertView = [[UIAlertView alloc] initWithTitle:@"Info" message:@"This application was created by: Derek Betubin"  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        if (alertView != nil)
-        {
-            [alertView show];
-        }*/
+         if (alertView != nil)
+         {
+         [alertView show];
+         }*/
     }
 }
+
+-(void)textDone:(id)sender //// gets rid of the keyboad .. still want to know how to have the done button 
+
+{
+    [self resignFirstResponder];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
