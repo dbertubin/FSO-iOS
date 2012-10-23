@@ -154,7 +154,7 @@
     switch (button.tag){
         case BUTTON_LOGIN:
         {
-            
+
             //7. Hint: NSString has a property called length that tells you how many characters are in the string.
             if (userNameInput.text.length != 0)
             {   // Otherwise, display "User: username has been logged in".
