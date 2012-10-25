@@ -10,9 +10,24 @@
 
 @implementation AssignmentFactory
 // Implement Static Method
-+(BaseAssignment *) createNewAssignment:(int) assignmentType
++(BaseAssignment *) createNewAssignment:(int)assignmentType
 {
-    return nil;
+    // check to see what type of subclass is coming thru
+    
+    // if a type requested - return allocated and initalized
+    if (assignmentType == VIDEO)
+    {
+        return [[Video alloc]init];
+    }
+    else if (assignmentType == DISCUSSION)
+    {
+        return [[Discussion alloc]init];
+    }
+    else if (assignmentType == PROJECT)
+    {
+        return [[Project alloc]init];
+    }
+    else return nil;
 }
 
 @end

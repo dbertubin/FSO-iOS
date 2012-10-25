@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AssignmentFactory.h"
 
 @interface ViewController : UIViewController
 

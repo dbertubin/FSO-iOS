@@ -19,9 +19,9 @@
     if (self != nil) {
         [self setNumberOfQuestions: 3];             //setting unique Properties
         [self setWordsReqPerAnswer: 150];
-        [self setTotalWordsPerDiscussion:nil];
-        [self setTotalTimeExpected:nil];
-        [self setAssignmentTimeMinutes:nil];      //setting inherited property
+        [self setTotalWordsPerDiscussion:0];
+        [self setTotalTimeExpected:0];
+        [self setAssignmentTimeMinutes:0];      //setting inherited property
         
     }
     return self;

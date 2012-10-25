@@ -18,5 +18,7 @@
 
 +(BaseAssignment *) createNewAssignment:(int) assignmentType;
 
+    // check to see what type of subclass is coming thru
+
 
 @end
