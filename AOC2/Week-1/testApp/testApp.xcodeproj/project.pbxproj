@@ -23,6 +23,11 @@
 		450DC8BE1636407A00A44164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450DC8991636407A00A44164 /* Foundation.framework */; };
 		450DC8C61636407A00A44164 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 450DC8C41636407A00A44164 /* InfoPlist.strings */; };
 		450DC8C91636407A00A44164 /* testAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 450DC8C81636407A00A44164 /* testAppTests.m */; };
+		454DE88B1639A01B00F2E2A4 /* EventFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE88A1639A01B00F2E2A4 /* EventFactory.m */; };
+		454DE88F1639A0E300F2E2A4 /* BaseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE88E1639A0E300F2E2A4 /* BaseEvent.m */; };
+		454DE8921639A2C500F2E2A4 /* BucketList.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8911639A2C500F2E2A4 /* BucketList.m */; };
+		454DE8951639A31000F2E2A4 /* FutureEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8941639A31000F2E2A4 /* FutureEvent.m */; };
+		454DE8981639A32900F2E2A4 /* PastEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8971639A32900F2E2A4 /* PastEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,16 @@
 		450DC8C51636407A00A44164 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		450DC8C71636407A00A44164 /* testAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testAppTests.h; sourceTree = "<group>"; };
 		450DC8C81636407A00A44164 /* testAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testAppTests.m; sourceTree = "<group>"; };
+		454DE8891639A01B00F2E2A4 /* EventFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventFactory.h; sourceTree = "<group>"; };
+		454DE88A1639A01B00F2E2A4 /* EventFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventFactory.m; sourceTree = "<group>"; };
+		454DE88D1639A0E300F2E2A4 /* BaseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseEvent.h; sourceTree = "<group>"; };
+		454DE88E1639A0E300F2E2A4 /* BaseEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEvent.m; sourceTree = "<group>"; };
+		454DE8901639A2C500F2E2A4 /* BucketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketList.h; sourceTree = "<group>"; };
+		454DE8911639A2C500F2E2A4 /* BucketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketList.m; sourceTree = "<group>"; };
+		454DE8931639A31000F2E2A4 /* FutureEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FutureEvent.h; sourceTree = "<group>"; };
+		454DE8941639A31000F2E2A4 /* FutureEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FutureEvent.m; sourceTree = "<group>"; };
+		454DE8961639A32900F2E2A4 /* PastEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastEvent.h; sourceTree = "<group>"; };
+		454DE8971639A32900F2E2A4 /* PastEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PastEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +137,16 @@
 				450DC8AF1636407A00A44164 /* MainStoryboard.storyboard */,
 				450DC8B21636407A00A44164 /* ViewController.h */,
 				450DC8B31636407A00A44164 /* ViewController.m */,
+				454DE8891639A01B00F2E2A4 /* EventFactory.h */,
+				454DE88A1639A01B00F2E2A4 /* EventFactory.m */,
+				454DE88D1639A0E300F2E2A4 /* BaseEvent.h */,
+				454DE88E1639A0E300F2E2A4 /* BaseEvent.m */,
+				454DE8901639A2C500F2E2A4 /* BucketList.h */,
+				454DE8911639A2C500F2E2A4 /* BucketList.m */,
+				454DE8931639A31000F2E2A4 /* FutureEvent.h */,
+				454DE8941639A31000F2E2A4 /* FutureEvent.m */,
+				454DE8961639A32900F2E2A4 /* PastEvent.h */,
+				454DE8971639A32900F2E2A4 /* PastEvent.m */,
 				450DC89E1636407A00A44164 /* Supporting Files */,
 			);
 			path = testApp;
@@ -273,6 +298,11 @@
 				450DC8A41636407A00A44164 /* main.m in Sources */,
 				450DC8A81636407A00A44164 /* AppDelegate.m in Sources */,
 				450DC8B41636407A00A44164 /* ViewController.m in Sources */,
+				454DE88B1639A01B00F2E2A4 /* EventFactory.m in Sources */,
+				454DE88F1639A0E300F2E2A4 /* BaseEvent.m in Sources */,
+				454DE8921639A2C500F2E2A4 /* BucketList.m in Sources */,
+				454DE8951639A31000F2E2A4 /* FutureEvent.m in Sources */,
+				454DE8981639A32900F2E2A4 /* PastEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +477,7 @@
 				450DC8CE1636407A00A44164 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		450DC8CF1636407A00A44164 /* Build configuration list for PBXNativeTarget "testAppTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +486,7 @@
 				450DC8D11636407A00A44164 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
