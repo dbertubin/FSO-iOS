@@ -10,5 +10,22 @@
 #import "AssignmentFactory.h"
 
 @interface ViewController : UIViewController
+{
+    UILabel * videoLabel;
+    NSString * videoString;
+    int timeToCompleteVideos;
+    UILabel * videoTimeEstimation;
+    UILabel * discussionLabel;
+    NSString * discussionString;
+    UILabel * discussionTimeLabel;
+    NSString *discussionTimeString;
+    int timeToCompleteDiscussion;
+    int timeToCompleteProject;
+    UILabel * projectLabel;
+    NSString * projectString;
+    UILabel * projectDetailLabel;
+    NSString * projectDetailLabelString;
+}
+
 
 @end

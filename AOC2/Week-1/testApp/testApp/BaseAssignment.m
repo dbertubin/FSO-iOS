@@ -11,7 +11,7 @@
 @implementation BaseAssignment
 
 // sythesize getters and setters for properties declared in header
-@synthesize instructions,assignmentTimeMinutes;
+@synthesize assignmentName,assignmentTimeMinutes;
 
 // init the base, instantiating and setting assignment time to 0
 
@@ -22,14 +22,15 @@
     if (self != nil)
     {
         [self setAssignmentTimeMinutes:0];      // using sythesized setters
-        [self setInstructions:nil];
+        [self setAssignmentName:nil];
     }
     return self;
 }
 
--(void)calcAssgnmentTime
+-(void)calcAssignmentTime
 {
     NSLog(@"You will need about %d to complete your assigment", assignmentTimeMinutes);
+    
 }
 
 @end

@@ -17,8 +17,8 @@
 {   // initializing from superclass or parent class BaseAssignment inheriting from it
     self = [super init];
     if (self != nil) {
-        [self setNumberOfQuestions: 3];             //setting unique Properties
-        [self setWordsReqPerAnswer: 150];
+        [self setNumberOfQuestions: 0];             //setting unique Properties
+        [self setWordsReqPerAnswer: 0];
         [self setTotalWordsPerDiscussion:0];
         [self setTotalTimeExpected:0];
         [self setAssignmentTimeMinutes:0];      //setting inherited property
@@ -27,12 +27,11 @@
     return self;
 }
 
--(void)calcAssgnmentTime
+-(void)calcAssignmentTime
 {
     [self setTotalWordsPerDiscussion:(numberOfQuestions * wordsReqPerAnswer)];
-    [self setTotalTimeExpected:(totalWordsPerDiscussion % 10)];
+    [self setTotalTimeExpected:(totalWordsPerDiscussion / 10)];
     [self setAssignmentTimeMinutes:totalTimeExpected];
-    NSLog(@"This discussion should take %d minutes", self.assignmentTimeMinutes);
     
 }
 

@@ -14,22 +14,27 @@
 @synthesize numberOfVideos,timePerVideo;
 
 -(id)init
+
 {   // initializing from superclass or parent class BaseAssignment inheriting from it
     self = [super init];
-    if (self != nil) {
-        [self setNumberOfVideos:5];             //setting unique Properties
+    
+    if (self != nil)
+    {
+    
+        [self setNumberOfVideos:0];             //setting unique Properties
         [self setTimePerVideo:15];
-        [self setAssignmentTimeMinutes:0];      //setting inherited property
+      
+        
     }
     return self;
 }
 
 
-// override ofbase calc method
--(void)calcAssgnmentTime
+// override base calc method
+-(void)calcAssignmentTime
 {
-    [self setAssignmentTimeMinutes:numberOfVideos * timePerVideo];
-    NSLog(@"You will need about %d to complete your assigment", self.assignmentTimeMinutes);
+    [self setAssignmentTimeMinutes:(numberOfVideos * timePerVideo)];
+
 }
 
 

@@ -15,6 +15,4 @@
 @property int timePerVideo;
 
 
-
-
 @end

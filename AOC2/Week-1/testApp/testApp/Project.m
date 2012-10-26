@@ -25,7 +25,7 @@
     return self;
 }
 
--(void)calcAssgnmentTime
+-(void)calcAssignmentTime
 {
     [self setAssignmentTimeMinutes:(timeForResearch + prepAndDelivery + workTime)];
     NSLog(@"the time for this assignment should be %d", self.assignmentTimeMinutes);

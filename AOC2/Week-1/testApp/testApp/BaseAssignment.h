@@ -21,7 +21,7 @@ typedef enum {
 } assignmentEnum;
 
 // Delare universal class properties
-@property NSString * instructions;
+@property NSString * assignmentName;
 @property int assignmentTimeMinutes;
 
 //init
@@ -29,7 +29,7 @@ typedef enum {
 
 //method to calc time for time of assignment
 
--(void)calcAssgnmentTime;
+-(void)calcAssignmentTime;
 
 
 @end
