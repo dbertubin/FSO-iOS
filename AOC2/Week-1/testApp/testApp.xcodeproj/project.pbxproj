@@ -23,11 +23,11 @@
 		450DC8BE1636407A00A44164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450DC8991636407A00A44164 /* Foundation.framework */; };
 		450DC8C61636407A00A44164 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 450DC8C41636407A00A44164 /* InfoPlist.strings */; };
 		450DC8C91636407A00A44164 /* testAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 450DC8C81636407A00A44164 /* testAppTests.m */; };
-		454DE89E1639B0AF00F2E2A4 /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE89D1639B0AF00F2E2A4 /* AssignmentFactory.m */; };
 		454DE8A11639B10500F2E2A4 /* BaseAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8A01639B10500F2E2A4 /* BaseAssignment.m */; };
 		454DE8B31639B21300F2E2A4 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8B21639B21300F2E2A4 /* Video.m */; };
 		454DE8B61639B23000F2E2A4 /* Discussion.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8B51639B23000F2E2A4 /* Discussion.m */; };
 		454DE8B91639B23C00F2E2A4 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8B81639B23C00F2E2A4 /* Project.m */; };
+		454DE8CF163A2DAE00F2E2A4 /* AssignmentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DE8CE163A2DAE00F2E2A4 /* AssignmentFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,6 @@
 		450DC8C51636407A00A44164 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		450DC8C71636407A00A44164 /* testAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testAppTests.h; sourceTree = "<group>"; };
 		450DC8C81636407A00A44164 /* testAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testAppTests.m; sourceTree = "<group>"; };
-		454DE89C1639B0AF00F2E2A4 /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssignmentFactory.h; path = ../AssignmentFactory.h; sourceTree = "<group>"; };
-		454DE89D1639B0AF00F2E2A4 /* AssignmentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssignmentFactory.m; path = ../AssignmentFactory.m; sourceTree = "<group>"; };
 		454DE89F1639B10500F2E2A4 /* BaseAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAssignment.h; sourceTree = "<group>"; };
 		454DE8A01639B10500F2E2A4 /* BaseAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAssignment.m; sourceTree = "<group>"; };
 		454DE8B11639B21300F2E2A4 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
@@ -73,6 +71,8 @@
 		454DE8B51639B23000F2E2A4 /* Discussion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Discussion.m; sourceTree = "<group>"; };
 		454DE8B71639B23C00F2E2A4 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		454DE8B81639B23C00F2E2A4 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		454DE8CB163A2D8800F2E2A4 /* AssignmentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentFactory.h; sourceTree = "<group>"; };
+		454DE8CE163A2DAE00F2E2A4 /* AssignmentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 				450DC8AF1636407A00A44164 /* MainStoryboard.storyboard */,
 				450DC8B21636407A00A44164 /* ViewController.h */,
 				450DC8B31636407A00A44164 /* ViewController.m */,
-				454DE89C1639B0AF00F2E2A4 /* AssignmentFactory.h */,
-				454DE89D1639B0AF00F2E2A4 /* AssignmentFactory.m */,
+				454DE8CB163A2D8800F2E2A4 /* AssignmentFactory.h */,
+				454DE8CE163A2DAE00F2E2A4 /* AssignmentFactory.m */,
 				454DE89F1639B10500F2E2A4 /* BaseAssignment.h */,
 				454DE8A01639B10500F2E2A4 /* BaseAssignment.m */,
 				454DE8B11639B21300F2E2A4 /* Video.h */,
@@ -298,11 +298,11 @@
 				450DC8A41636407A00A44164 /* main.m in Sources */,
 				450DC8A81636407A00A44164 /* AppDelegate.m in Sources */,
 				450DC8B41636407A00A44164 /* ViewController.m in Sources */,
-				454DE89E1639B0AF00F2E2A4 /* AssignmentFactory.m in Sources */,
 				454DE8A11639B10500F2E2A4 /* BaseAssignment.m in Sources */,
 				454DE8B31639B21300F2E2A4 /* Video.m in Sources */,
 				454DE8B61639B23000F2E2A4 /* Discussion.m in Sources */,
 				454DE8B91639B23C00F2E2A4 /* Project.m in Sources */,
+				454DE8CF163A2DAE00F2E2A4 /* AssignmentFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
