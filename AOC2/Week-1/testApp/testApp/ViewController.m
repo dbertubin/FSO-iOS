@@ -42,7 +42,7 @@
      ******************************************/
     
     // use AssignmentFactory to create video class
-    Video * weekOneVideos = (Video *)[AssignmentFactory createNewAssignment:VIDEO];
+    weekOneVideos = (Video *)[AssignmentFactory createNewAssignment:VIDEO];
     if (weekOneVideos !=nil)
     {
         //set properties
@@ -88,7 +88,7 @@
 
     
     // use AssignmentFactory to create video class
-    Discussion * weekOneDiscussion = (Discussion *)[AssignmentFactory createNewAssignment:DISCUSSION];
+    weekOneDiscussion = (Discussion *)[AssignmentFactory createNewAssignment:DISCUSSION];
     if (weekOneDiscussion != nil) {
         
         //set properties
@@ -135,7 +135,7 @@
      ******************************************/
     
     // use AssignmentFactory to create video class
-    Project * weekOneProject =(Project *)[AssignmentFactory createNewAssignment:PROJECT];
+    weekOneProject =(Project *)[AssignmentFactory createNewAssignment:PROJECT];
     if (weekOneProject != nil) {
         [weekOneProject setAssignmentName:@"Week 1 Project"];
         [weekOneProject setTimeForResearch:120];
@@ -171,6 +171,8 @@
         
     }
     
+    
+    
     //call into view
     [self.view addSubview:projectDetailLabel];
     
@@ -179,6 +181,7 @@
     Is my code stucture ok as in is it readable?
      
     ********************************************/
+
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

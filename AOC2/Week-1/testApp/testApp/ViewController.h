@@ -25,8 +25,13 @@
     // NSString * projectString;
     UILabel * projectDetailLabel;
     NSString * projectDetailLabelString;
-    UILabel * titleLable; 
+    UILabel * titleLable;
+    Video * weekOneVideos;
+    Discussion * weekOneDiscussion;
+    Project * weekOneProject;
 }
+
+
 
 
 @end

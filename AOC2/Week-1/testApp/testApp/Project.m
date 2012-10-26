@@ -18,9 +18,9 @@
     self = [super init];
     if (self != nil)
     {
-        [self setTimeForResearch:120];
-        [self setPrepAndDelivery:30];
-        [self setWorkTime:120];
+        [self setTimeForResearch:0];
+        [self setPrepAndDelivery:0];
+        [self setWorkTime:0];
     }
     return self;
 }
