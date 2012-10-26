@@ -12,19 +12,20 @@
 @interface ViewController : UIViewController
 {
     UILabel * videoLabel;
-    NSString * videoString;
+    //NSString * videoString;
     int timeToCompleteVideos;
     UILabel * videoTimeEstimation;
     UILabel * discussionLabel;
-    NSString * discussionString;
+    //NSString * discussionString;
     UILabel * discussionTimeLabel;
     NSString *discussionTimeString;
     int timeToCompleteDiscussion;
     int timeToCompleteProject;
     UILabel * projectLabel;
-    NSString * projectString;
+    // NSString * projectString;
     UILabel * projectDetailLabel;
     NSString * projectDetailLabelString;
+    UILabel * titleLable; 
 }
 
 

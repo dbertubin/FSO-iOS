@@ -14,7 +14,7 @@
 {
     // check to see what type of subclass is coming thru
     
-    // if a type requested - return allocated and initalized
+    // if a type requested - return type allocated and initalized
     if (assignmentType == VIDEO)
     {
         return [[Video alloc]init];

@@ -16,6 +16,7 @@
 
 //Create Static Class Method
 
+                                        // enum val declared in BaseAssignment.h 
 +(BaseAssignment *) createNewAssignment:(int) assignmentType;
 
     // check to see what type of subclass is coming thru
