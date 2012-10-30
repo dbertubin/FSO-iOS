@@ -12,23 +12,23 @@
 @interface ViewController : UIViewController
 {
     UILabel * videoLabel;
-    //NSString * videoString;
     int timeToCompleteVideos;
     UILabel * videoTimeEstimation;
     UILabel * discussionLabel;
-    //NSString * discussionString;
     UILabel * discussionTimeLabel;
     NSString *discussionTimeString;
     int timeToCompleteDiscussion;
     int timeToCompleteProject;
     UILabel * projectLabel;
-    // NSString * projectString;
     UILabel * projectDetailLabel;
     NSString * projectDetailLabelString;
     UILabel * titleLable;
     Video * weekOneVideos;
     Discussion * weekOneDiscussion;
     Project * weekOneProject;
+    // NSString * projectString;
+    //NSString * discussionString;
+    //NSString * videoString;
 }
 
 

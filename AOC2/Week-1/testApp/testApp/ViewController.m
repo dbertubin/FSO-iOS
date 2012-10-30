@@ -47,7 +47,7 @@
     {
         //set properties
         [weekOneVideos setAssignmentName:@"Week 1 Videos"];
-        [weekOneVideos setNumberOfVideos:6];
+        [weekOneVideos setNumberOfVideos:15];
         [weekOneVideos calcAssignmentTime];     // call custom calc method
         
         // assign assignmentTimeMinutes to an int val
@@ -170,7 +170,6 @@
         }
         
     }
-    
     
     
     //call into view
