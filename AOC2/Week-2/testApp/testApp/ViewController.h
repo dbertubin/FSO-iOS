@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 {
+    // UIControls 
     IBOutlet UITextField * calcDisplay;
     IBOutlet UISwitch * calcOnOffToggle;
     IBOutlet UIButton * zero;
@@ -26,17 +27,25 @@
     IBOutlet UIButton * plus;
     IBOutlet UIButton * equals;
     IBOutlet UISegmentedControl * backgroundToggle;
-    IBOutlet UIButton * info;
+    IBOutlet UIButton * infoButton;
+    
+    // Used variables 
+    int segIndex;
+    int pressedNumVal;
+    int newValue;
+    int currentDisplayedValue;
+    int result;
     
 
 }
 
 
-
+// IB methods 
 -(IBAction)onSwitch:(UISwitch *)sender;
 -(IBAction)onClick:(UIButton *)sender;
 -(IBAction)onClear:(UIButton *)sender;
 -(IBAction)valuePressed:(UIButton *)sender;
 -(IBAction)bgColorSelector:(UISegmentedControl *)sender;
+-(IBAction)calc:(UIButton *)sender;
 
 @end
