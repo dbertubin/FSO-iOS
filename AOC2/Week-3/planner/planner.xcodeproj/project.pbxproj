@@ -23,6 +23,8 @@
 		4591918816475F5C00E30D53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4591916316475F5B00E30D53 /* Foundation.framework */; };
 		4591919016475F5C00E30D53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4591918E16475F5C00E30D53 /* InfoPlist.strings */; };
 		4591919316475F5C00E30D53 /* plannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4591919216475F5C00E30D53 /* plannerTests.m */; };
+		45C390BF164ACC890067681F /* AddEventScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C390BD164ACC890067681F /* AddEventScreen.m */; };
+		45C390C0164ACC890067681F /* AddEventScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C390BE164ACC890067681F /* AddEventScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		4591918F16475F5C00E30D53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4591919116475F5C00E30D53 /* plannerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plannerTests.h; sourceTree = "<group>"; };
 		4591919216475F5C00E30D53 /* plannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = plannerTests.m; sourceTree = "<group>"; };
+		45C390BC164ACC890067681F /* AddEventScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddEventScreen.h; path = ../AddEventScreen.h; sourceTree = "<group>"; };
+		45C390BD164ACC890067681F /* AddEventScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddEventScreen.m; path = ../AddEventScreen.m; sourceTree = "<group>"; };
+		45C390BE164ACC890067681F /* AddEventScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddEventScreen.xib; path = ../AddEventScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +127,9 @@
 				4591917916475F5B00E30D53 /* ViewController.h */,
 				4591917A16475F5B00E30D53 /* ViewController.m */,
 				4591917C16475F5B00E30D53 /* ViewController.xib */,
+				45C390BC164ACC890067681F /* AddEventScreen.h */,
+				45C390BD164ACC890067681F /* AddEventScreen.m */,
+				45C390BE164ACC890067681F /* AddEventScreen.xib */,
 				4591916816475F5B00E30D53 /* Supporting Files */,
 			);
 			path = planner;
@@ -236,6 +244,7 @@
 				4591917616475F5B00E30D53 /* Default@2x.png in Resources */,
 				4591917816475F5B00E30D53 /* Default-568h@2x.png in Resources */,
 				4591917E16475F5B00E30D53 /* ViewController.xib in Resources */,
+				45C390C0164ACC890067681F /* AddEventScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +282,7 @@
 				4591916E16475F5B00E30D53 /* main.m in Sources */,
 				4591917216475F5B00E30D53 /* AppDelegate.m in Sources */,
 				4591917B16475F5B00E30D53 /* ViewController.m in Sources */,
+				45C390BF164ACC890067681F /* AddEventScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +457,7 @@
 				4591919816475F5C00E30D53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4591919916475F5C00E30D53 /* Build configuration list for PBXNativeTarget "plannerTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +466,7 @@
 				4591919B16475F5C00E30D53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

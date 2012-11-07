@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddEventScreen.h"
 
 @interface ViewController : UIViewController
+
+{
+    
+    
+}
+-(IBAction)onClick:(UIButton*)sender;
 
 @end
