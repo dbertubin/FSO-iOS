@@ -14,9 +14,23 @@
 
 @implementation ViewController
 
+-(void)eventRelay:(NSString *)eventString
+{
+    if (eventData != nil) {
+        eventData = [eventString stringByAppendingString:eventData];
+    }
+    else
+    {
+        eventData = [NSString stringWithFormat:@"%@",eventData];
+    }
+    eventList.text = eventData;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    eventList.text = @"Events are listed Here!";
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -33,6 +47,8 @@
     
     if (addEvent != nil)
     {
+        addEvent.customAddEventDelegate = self;
+        
         [self presentViewController:addEvent animated:YES completion: NULL];
     }
 }

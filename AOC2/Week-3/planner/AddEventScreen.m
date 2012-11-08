@@ -8,11 +8,19 @@
 
 #import "AddEventScreen.h"
 
+#define SAVE_BUTTON     0
+#define CLOSE_BUTTON    1
+#define CANCEL_BUTTON   2
+
+
 @interface AddEventScreen ()
 
 @end
 
 @implementation AddEventScreen
+
+// synth delegate
+@synthesize customAddEventDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // ah this was tricky tricky as it it is not in the xib...;)
+    datePicker.minimumDate = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +54,7 @@
     [super viewWillAppear:animated];
 }
 
-// Show method  
+// Show method
 -(void)keyboardWillShow:(NSNotification*)notification
 {
     
@@ -61,17 +70,50 @@
 -(IBAction)onClick:(UIButton*)sender
 
 {
-    if (sender != nil)
-    {   // Cancel 
-        if (sender.tag == 0)
+        
+    switch (sender.tag)
+    
+    {
+        case SAVE_BUTTON:
         {
-            [self dismissViewControllerAnimated:TRUE completion:nil];
+            eventName = textField.text;
+            dateValue = datePicker.date;
+            if (dateValue != nil) {
+                formattedDate =[[NSDateFormatter alloc]init];
+                if (formattedDate != nil) {
+                    [formattedDate setDateFormat:@"EE, MMM d, yyyy hh:mm a"];
+                    dateString = [formattedDate stringFromDate:dateValue];
+                }
+            }
+
+            if (customAddEventDelegate != nil)
+            {
+                if (eventString != nil) {
+                    eventString = [[NSString alloc]initWithString:eventName];                }
+                
+                [customAddEventDelegate eventRelay:eventString];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            NSLog(@"%@",eventString);
         }
-        else if (sender.tag == 2)
-        {   // Close Keyboard 
+            
+            
+            break;
+            
+        case CLOSE_BUTTON:
+        {
+            // Close Keyboard
             [textField resignFirstResponder];
             
         }
+            break;
+            
+        case CANCEL_BUTTON:
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        default:
+            break;
     }
 }
 

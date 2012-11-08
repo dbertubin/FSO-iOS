@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "AddEventScreen.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AddEventDelegate>
 
 {
+    NSString *eventData;
     
-    
+    //IBOutlets
+    IBOutlet UITextView * eventList;
 }
 -(IBAction)onClick:(UIButton*)sender;
+
 
 @end

@@ -8,12 +8,36 @@
 
 #import <UIKit/UIKit.h>
 
+// Custome delegate to relay the saved string to UI textField 
+@protocol AddEventDelegate <NSObject>
+
+@required
+-(void)eventRelay:(NSString *)eventString;
+
+@end
+
 @interface AddEventScreen : UIViewController
 
 {
+    //Custom Delegate
+    id <AddEventDelegate> customAddEventDelegate;
+    
+    // IBOulest - So i heard that declaring IBOutlet like this is not correct 
     IBOutlet UITextField * textField ;
+    IBOutlet UIDatePicker * datePicker;
+    
+    // vars
+    NSString * eventName;
+    NSDate * dateValue;
+    NSDateFormatter * formattedDate;
+    NSString * dateString;
+    NSString * eventString;
+    UIAlertView * alert;
 
 }
+
+@property (strong) id <AddEventDelegate> customAddEventDelegate
+;
 
 -(IBAction)onClick:(UIButton* )sender;
 
