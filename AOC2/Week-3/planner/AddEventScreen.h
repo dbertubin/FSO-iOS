@@ -12,7 +12,7 @@
 @protocol AddEventDelegate <NSObject>
 
 @required
--(void)eventRelay:(NSString *)eventString;
+-(void)eventRelay:(NSString *)eventStringConcat;
 
 @end
 
@@ -31,7 +31,7 @@
     NSDate * dateValue;
     NSDateFormatter * formattedDate;
     NSString * dateString;
-    NSString * eventString;
+    NSString * eventStringConcat;
     UIAlertView * alert;
 
 }

@@ -47,10 +47,11 @@
 // Show and hide Keyboard Using NC
 - (void)viewWillAppear:(BOOL)animated
 {
+    /*
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
+    */
     [super viewWillAppear:animated];
 }
 
@@ -70,7 +71,7 @@
 -(IBAction)onClick:(UIButton*)sender
 
 {
-        
+    
     switch (sender.tag)
     
     {
@@ -85,18 +86,21 @@
                     dateString = [formattedDate stringFromDate:dateValue];
                 }
             }
-
-            if (customAddEventDelegate != nil)
-            {
-                if (eventString != nil) {
-                    eventString = [[NSString alloc]initWithString:eventName];                }
-                
-                [customAddEventDelegate eventRelay:eventString];
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-            NSLog(@"%@",eventString);
-        }
             
+            
+            if (eventStringConcat != nil)
+            {
+                eventStringConcat = [NSString stringWithFormat:@"Event Name:%@, \n Date: %@",eventName,dateString];
+                
+                
+                if (customAddEventDelegate != nil)
+                {
+                    [customAddEventDelegate eventRelay:eventStringConcat];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+                NSLog(@"%@",eventStringConcat);
+            }
+        }
             
             break;
             

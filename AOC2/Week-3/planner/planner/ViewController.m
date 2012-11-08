@@ -17,7 +17,7 @@
 -(void)eventRelay:(NSString *)eventString
 {
     if (eventData != nil) {
-        eventData = [eventString stringByAppendingString:eventData];
+        eventData = [eventData stringByAppendingString:eventData];
     }
     else
     {
