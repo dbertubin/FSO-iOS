@@ -17,11 +17,11 @@
 -(void)eventRelay:(NSString *)eventString
 {
     if (eventData != nil) {
-        eventData = [eventData stringByAppendingString:eventData];
+        eventData = [eventData stringByAppendingString:eventString];
     }
     else
     {
-        eventData = [NSString stringWithFormat:@"%@",eventData];
+        eventData = [NSString stringWithFormat:@"%@",eventString];
     }
     eventList.text = eventData;
 }

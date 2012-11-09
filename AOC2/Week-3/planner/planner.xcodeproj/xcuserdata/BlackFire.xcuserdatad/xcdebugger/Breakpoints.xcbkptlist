@@ -21,13 +21,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "AddEventScreen.m"
-         timestampString = "374050012.741395"
+         timestampString = "374081548.686715"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
          landmarkName = "-onClick:"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "AddEventScreen.h"
+         timestampString = "374111734.271531"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "8"
+         endingLineNumber = "8">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

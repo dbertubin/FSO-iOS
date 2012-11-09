@@ -48,10 +48,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     /*
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    */
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+     
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+     */
     [super viewWillAppear:animated];
 }
 
@@ -88,19 +88,18 @@
             }
             
             
-            if (eventStringConcat != nil)
+            
+            eventStringConcat = [NSString stringWithFormat:@"Event Name: %@, \nDate:  %@ \n \n" ,eventName,dateString];
+            
+            
+            if (customAddEventDelegate != nil)
             {
-                eventStringConcat = [NSString stringWithFormat:@"Event Name:%@, \n Date: %@",eventName,dateString];
-                
-                
-                if (customAddEventDelegate != nil)
-                {
-                    [customAddEventDelegate eventRelay:eventStringConcat];
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                }
-                NSLog(@"%@",eventStringConcat);
+                [customAddEventDelegate eventRelay:eventStringConcat];
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
+            NSLog(@"%@",eventStringConcat);
         }
+            
             
             break;
             
