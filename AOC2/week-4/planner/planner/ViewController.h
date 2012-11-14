@@ -16,13 +16,18 @@
     //IBOutlets
     IBOutlet UITextView * eventList;
     IBOutlet UILabel * addSwipe;
+    IBOutlet UIButton * saveButton;
  
     NSString *eventData;
     UISwipeGestureRecognizer * rightSwipe;
+    UIAlertView * alert;
+    NSUserDefaults * setDefaults;
+    NSString * eventText; 
 
 }
 
 -(IBAction)onSwipe:(UISwipeGestureRecognizer*)recognizer;
+-(IBAction)onClick:(UIButton* )sender;
 
 
 @end

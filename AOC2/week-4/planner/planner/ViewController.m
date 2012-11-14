@@ -28,12 +28,32 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-    eventList.text = @"Events are listed Here!";
+    
+    if(![[NSUserDefaults standardUserDefaults]objectForKey:@"eventText"])
+    {
+        eventList.text = @"Events are listed Here!";
+    }
+    else
+    {
+        setDefaults = [NSUserDefaults standardUserDefaults];
+        if (setDefaults != nil) {
+            
+            eventText = eventList.text;
+            
+            [setDefaults setObject:eventText forKey:@"eventText"];
+            
+        }
+    }
+    
+    
     
     rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
     rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [addSwipe addGestureRecognizer:rightSwipe];
+    
+    
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -55,6 +75,43 @@
         
         [self presentViewController:addEvent animated:YES completion: NULL];
     }
+}
+
+
+//********* onClick function for Save Button
+
+-(IBAction)onClick:(UIButton *)sender
+{
+    NSLog(@"%@", eventList.text );
+    NSLog(@"%d", eventList.text.length);
+    if(eventList.text.length == 23)
+        
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"Whoa Buddy!" message:@"There is nothing to save! You must add a new event then save." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        
+    }
+    else
+    {
+        setDefaults = [NSUserDefaults standardUserDefaults];
+        if (setDefaults != nil) {
+            
+            eventText = eventList.text;
+            
+            [setDefaults setObject:eventText forKey:@"eventText"];
+            
+            
+            [setDefaults synchronize];
+            
+            alert =[[UIAlertView alloc]initWithTitle:@"Congratulations!" message:@"All of your events have been saved!" delegate:nil cancelButtonTitle:@"Whoo Hoo!" otherButtonTitles: nil];
+            [alert show];
+            
+        }
+        
+    }
+    
+    
+    
 }
 
 
