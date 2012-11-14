@@ -25,6 +25,7 @@
     // IBOulest - So i heard that declaring IBOutlet like this is not correct 
     IBOutlet UITextField * textField ;
     IBOutlet UIDatePicker * datePicker;
+    IBOutlet UILabel * saveSwipe;
     
     // vars
     NSString * eventName;
@@ -33,11 +34,14 @@
     NSString * dateString;
     NSString * eventStringConcat;
     UIAlertView * alert;
+    UISwipeGestureRecognizer * leftSwipe;
 
 }
 
 @property (strong) id <AddEventDelegate> customAddEventDelegate
 ;
+
+-(IBAction)onSwipe:(UISwipeGestureRecognizer*)recognizer;
 
 -(IBAction)onClick:(UIButton* )sender;
 

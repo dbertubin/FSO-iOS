@@ -12,12 +12,17 @@
 @interface ViewController : UIViewController <AddEventDelegate>
 
 {
-    NSString *eventData;
     
     //IBOutlets
     IBOutlet UITextView * eventList;
+    IBOutlet UILabel * addSwipe;
+ 
+    NSString *eventData;
+    UISwipeGestureRecognizer * rightSwipe;
+
 }
--(IBAction)onClick:(UIButton*)sender;
+
+-(IBAction)onSwipe:(UISwipeGestureRecognizer*)recognizer;
 
 
 @end

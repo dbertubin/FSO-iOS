@@ -36,6 +36,10 @@
     [super viewDidLoad];
     // ah this was tricky tricky as it it is not in the xib...;)
     datePicker.minimumDate = [NSDate date];
+    
+    leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [saveSwipe addGestureRecognizer:leftSwipe];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,6 +71,38 @@
     
 }
 
+-(IBAction)onSwipe:(UISwipeGestureRecognizer *)recognizer
+
+{
+    eventName = textField.text;
+    if (eventName.length == 0)
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"Ooops!" message:@"Please enter a Name for the Event" delegate: nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+    }
+    else
+    {
+        dateValue = datePicker.date;
+        if (dateValue != nil) {
+            formattedDate =[[NSDateFormatter alloc]init];
+            if (formattedDate != nil) {
+                [formattedDate setDateFormat:@"EE, MMM d, yyyy hh:mm a"];
+                dateString = [formattedDate stringFromDate:dateValue];
+            }
+        }
+        
+        eventStringConcat = [NSString stringWithFormat:@"Event Name: %@ \nDate:  %@ \n \n" ,eventName,dateString];
+        
+        
+        if (customAddEventDelegate != nil)
+        {
+            [customAddEventDelegate eventRelay:eventStringConcat];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        NSLog(@"%@",eventStringConcat);
+    }
+}
+
 
 -(IBAction)onClick:(UIButton*)sender
 
@@ -75,34 +111,7 @@
     switch (sender.tag)
     
     {
-        case SAVE_BUTTON:
-        {
-            eventName = textField.text;
-            dateValue = datePicker.date;
-            if (dateValue != nil) {
-                formattedDate =[[NSDateFormatter alloc]init];
-                if (formattedDate != nil) {
-                    [formattedDate setDateFormat:@"EE, MMM d, yyyy hh:mm a"];
-                    dateString = [formattedDate stringFromDate:dateValue];
-                }
-            }
-            
-            
-            
-            eventStringConcat = [NSString stringWithFormat:@"Event Name: %@ \nDate:  %@ \n \n" ,eventName,dateString];
-            
-            
-            if (customAddEventDelegate != nil)
-            {
-                [customAddEventDelegate eventRelay:eventStringConcat];
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-            NSLog(@"%@",eventStringConcat);
-        }
-            
-            
-            break;
-            
+    
         case CLOSE_BUTTON:
         {
             // Close Keyboard
