@@ -14,6 +14,7 @@
 
 @implementation ViewController
 
+// custom delegate relays info from AddEvent
 -(void)eventRelay:(NSString *)eventString
 {
     if (eventData != nil) {
@@ -26,33 +27,39 @@
     eventList.text = eventData;
 }
 
+
 - (void)viewDidLoad
-{
+{   // cache of original frame position **** not using until I figure out sideView.
+    originalTopViewFrame = topView.frame;
     
     [super viewDidLoad];
     
+    // checks to see if NSUserDefaults is empty
     if(![[NSUserDefaults standardUserDefaults]objectForKey:@"eventText"])
-    {
+    {   // if so use initial string
         eventList.text = @"Events are listed Here!";
     }
     else
-    {
+    {   // if not empy then use the stored info
         setDefaults = [NSUserDefaults standardUserDefaults];
         if (setDefaults != nil)
         {
-            
+            // retrive data using key and set it to string
             eventData = [setDefaults objectForKey:@"eventText"];
             eventTextWithOldData = [NSString stringWithFormat:@"%@", eventData];
             
             
         }
+        // set eventData used in as the displayed data in Viewcontroller
         eventList.text = eventTextWithOldData;
     }
     
     
-    
+    // loads swipes
     rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    // sets swipe direction 
     rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    
     [addSwipe addGestureRecognizer:rightSwipe];
     
     
@@ -84,8 +91,6 @@
 
 -(IBAction)onClick:(UIButton *)sender
 {
-    NSLog(@"%@", eventList.text );
-    NSLog(@"%d", eventList.text.length);
     if(eventList.text.length <= 23)
         
     {
@@ -111,6 +116,57 @@
         }
     }
 }
+/*
+ -(IBAction)sideViewPresent:(UIButton* )sender
+ {
+ 
+ if (isTopView)
+ {
+ // announces the animation
+ [UIView beginAnimations:nil context:nil];
+ 
+ // sets the animation duration
+ [UIView setAnimationDuration:0.5f];
+ 
+ 
+ topView.frame = CGRectMake(220.0f, 0.0f, topView.frame.size.width, topView.frame.size.height);
+ isTopView = NO;
+ 
+ // commits animation
+ [UIView commitAnimations];
+ }
+ else if (!isTopView)
+ {
+ // announces the animation
+ [UIView beginAnimations:nil context:nil];
+ 
+ // sets the animation duration
+ [UIView setAnimationDuration:0.5f];
+ 
+ // if the bottom view is the current move the top view over it
+ topView.frame = originalTopViewFrame;
+ isTopView = YES;
+ 
+ // commits animation
+ [UIView commitAnimations];
+ }
+ 
+ 
+ 
+ 
+ */
+
+/*
+ 
+ [UIView beginAnimations:nil context:nil];
+ 
+ [UIView setAnimationDuration:3.0f];
+ topView.frame = CGRectMake(250.0f, 0.0f, topView.frame.size.width, topView.frame.size.height);
+ 
+ [UIView commitAnimations];
+ */
+
+
 
 
 @end

@@ -37,8 +37,11 @@
     // ah this was tricky tricky as it it is not in the xib...;)
     datePicker.minimumDate = [NSDate date];
     
+    // loads swipoe 
     leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    // add swipe direction
     leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    // add gesture regonizer  
     [saveSwipe addGestureRecognizer:leftSwipe];
 }
 
@@ -51,55 +54,45 @@
 // Show and hide Keyboard Using NC
 - (void)viewWillAppear:(BOOL)animated
 {
-    /*
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-     
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-     */
-    [super viewWillAppear:animated];
+        [super viewWillAppear:animated];
 }
 
-// Show method
--(void)keyboardWillShow:(NSNotification*)notification
-{
-    
-}
 
-// Hide method
--(void)keyboardWillHide:(NSNotification*)notification
-{
-    
-}
-
+// onSwipe method connected to the Save Label
 -(IBAction)onSwipe:(UISwipeGestureRecognizer *)recognizer
 
-{
+{   // set string var to be passed into eventStringConcat
     eventName = textField.text;
+    
+    // empty text field validation with alert
     if (eventName.length == 0)
     {
         alert = [[UIAlertView alloc] initWithTitle:@"Ooops!" message:@"Please enter a Name for the Event" delegate: nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alert show];
     }
     else
-    {
+    {   // grab values from date picker 
         dateValue = datePicker.date;
         if (dateValue != nil) {
+            //format date 
             formattedDate =[[NSDateFormatter alloc]init];
             if (formattedDate != nil) {
                 [formattedDate setDateFormat:@"EE, MMM d, yyyy hh:mm a"];
                 dateString = [formattedDate stringFromDate:dateValue];
             }
         }
-        
+        // concat name and date into string 
         eventStringConcat = [NSString stringWithFormat:@"Event Name: %@ \nDate:  %@ \n \n" ,eventName,dateString];
         
         
         if (customAddEventDelegate != nil)
         {
+            // send eventStringConcat to customAddEventDelegate thru eventRelay
             [customAddEventDelegate eventRelay:eventStringConcat];
+            
+            // dismiss modal view 
             [self dismissViewControllerAnimated:YES completion:nil];
         }
-        NSLog(@"%@",eventStringConcat);
     }
 }
 
@@ -107,11 +100,11 @@
 -(IBAction)onClick:(UIButton*)sender
 
 {
-    
+    // switch according to tag .. 
     switch (sender.tag)
     
     {
-    
+            
         case CLOSE_BUTTON:
         {
             // Close Keyboard
@@ -122,6 +115,7 @@
             
         case CANCEL_BUTTON:
         {
+            // dismiss modal screen
             [self dismissViewControllerAnimated:YES completion:nil];
         }
         default:
