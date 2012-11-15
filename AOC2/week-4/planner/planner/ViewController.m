@@ -38,13 +38,15 @@
     else
     {
         setDefaults = [NSUserDefaults standardUserDefaults];
-        if (setDefaults != nil) {
+        if (setDefaults != nil)
+        {
             
-            eventText = eventList.text;
+            eventData = [setDefaults objectForKey:@"eventText"];
+            eventTextWithOldData = [NSString stringWithFormat:@"%@", eventData];
             
-            [setDefaults setObject:eventText forKey:@"eventText"];
             
         }
+        eventList.text = eventTextWithOldData;
     }
     
     
@@ -84,7 +86,7 @@
 {
     NSLog(@"%@", eventList.text );
     NSLog(@"%d", eventList.text.length);
-    if(eventList.text.length == 23)
+    if(eventList.text.length <= 23)
         
     {
         alert = [[UIAlertView alloc] initWithTitle:@"Whoa Buddy!" message:@"There is nothing to save! You must add a new event then save." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -107,11 +109,7 @@
             [alert show];
             
         }
-        
     }
-    
-    
-    
 }
 
 

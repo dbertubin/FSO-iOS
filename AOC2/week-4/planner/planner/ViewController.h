@@ -22,7 +22,8 @@
     UISwipeGestureRecognizer * rightSwipe;
     UIAlertView * alert;
     NSUserDefaults * setDefaults;
-    NSString * eventText; 
+    NSString * eventText;
+    NSString *eventTextWithOldData;
 
 }
 
