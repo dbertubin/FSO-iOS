@@ -98,9 +98,9 @@
         setDefaults = [NSUserDefaults standardUserDefaults];
         if (setDefaults != nil) {
             
-            eventText = eventList.text;
+            eventData = eventList.text;
             
-            [setDefaults setObject:eventText forKey:@"eventText"];
+            [setDefaults setObject:eventData forKey:@"eventText"];
             
             
             [setDefaults synchronize];
