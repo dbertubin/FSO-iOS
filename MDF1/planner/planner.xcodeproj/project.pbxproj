@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4569AE6C16642EE5003A2FFA /* LabelImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4569AE6B16642EE5003A2FFA /* LabelImage.png */; };
 		456D93B81661F49400F5696E /* NewIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D93B71661F49400F5696E /* NewIcon@2x.png */; };
 		456D93BB1661F56A00F5696E /* NewIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D93BA1661F56A00F5696E /* NewIcon.png */; };
 		456D93BD1661F57800F5696E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D93BC1661F57800F5696E /* Default.png */; };
@@ -14,7 +15,6 @@
 		456D93C11661F58F00F5696E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D93C01661F58F00F5696E /* Default-568h@2x.png */; };
 		456D942D1663485400F5696E /* CustomUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 456D942C1663485400F5696E /* CustomUITableViewCell.m */; };
 		456D942F1663486B00F5696E /* CustomUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 456D942E1663486B00F5696E /* CustomUITableViewCell.xib */; };
-		456D94311663492900F5696E /* LabelImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D94301663492900F5696E /* LabelImage.png */; };
 		456D943516635C3400F5696E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456D943316635C3400F5696E /* DetailViewController.m */; };
 		456D943616635C3400F5696E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 456D943416635C3400F5696E /* DetailViewController.xib */; };
 		4591916216475F5B00E30D53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4591916116475F5B00E30D53 /* UIKit.framework */; };
@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4569AE6B16642EE5003A2FFA /* LabelImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LabelImage.png; path = ../../../../../Desktop/Assets/LabelImage.png; sourceTree = "<group>"; };
 		456D93B71661F49400F5696E /* NewIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewIcon@2x.png"; path = "../NewIcon@2x.png"; sourceTree = "<group>"; };
 		456D93BA1661F56A00F5696E /* NewIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewIcon.png; path = ../NewIcon.png; sourceTree = "<group>"; };
 		456D93BC1661F57800F5696E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		456D942B1663485400F5696E /* CustomUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomUITableViewCell.h; path = ../CustomUITableViewCell.h; sourceTree = "<group>"; };
 		456D942C1663485400F5696E /* CustomUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomUITableViewCell.m; path = ../CustomUITableViewCell.m; sourceTree = "<group>"; };
 		456D942E1663486B00F5696E /* CustomUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomUITableViewCell.xib; path = ../CustomUITableViewCell.xib; sourceTree = "<group>"; };
-		456D94301663492900F5696E /* LabelImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LabelImage.png; path = ../../../../../Desktop/Assets/LabelImage.png; sourceTree = "<group>"; };
 		456D943216635C3400F5696E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
 		456D943316635C3400F5696E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
 		456D943416635C3400F5696E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ../DetailViewController.xib; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		4591916816475F5B00E30D53 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				456D94301663492900F5696E /* LabelImage.png */,
+				4569AE6B16642EE5003A2FFA /* LabelImage.png */,
 				456D93C01661F58F00F5696E /* Default-568h@2x.png */,
 				456D93BE1661F58700F5696E /* Default@2x.png */,
 				456D93BC1661F57800F5696E /* Default.png */,
@@ -285,8 +285,8 @@
 				456D93BF1661F58700F5696E /* Default@2x.png in Resources */,
 				456D93C11661F58F00F5696E /* Default-568h@2x.png in Resources */,
 				456D942F1663486B00F5696E /* CustomUITableViewCell.xib in Resources */,
-				456D94311663492900F5696E /* LabelImage.png in Resources */,
 				456D943616635C3400F5696E /* DetailViewController.xib in Resources */,
+				4569AE6C16642EE5003A2FFA /* LabelImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

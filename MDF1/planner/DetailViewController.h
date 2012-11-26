@@ -10,7 +10,7 @@
 #import "ViewController.h"
 
 
-@interface DetailViewController : UIViewController   <DetailDelegate>
+@interface DetailViewController : UIViewController  // <DetailDelegate>
 
 
 {
