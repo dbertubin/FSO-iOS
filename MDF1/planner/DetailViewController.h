@@ -10,10 +10,11 @@
 #import "ViewController.h"
 
 
-@interface DetailViewController : UIViewController //   <DetailDelegate>
+@interface DetailViewController : UIViewController   <DetailDelegate>
 
 
 {
+    
     IBOutlet UILabel * textLabel;
     IBOutlet UIButton * backButton;
 }
