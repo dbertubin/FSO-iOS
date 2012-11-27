@@ -18,15 +18,9 @@
 @synthesize detailLabelText;
 @synthesize textLabel;
 @synthesize backButton;
+@synthesize detailView;
+@synthesize detailViewText;
 
-// Feeds data from UITableView Cell to Detail Label
--(void)detailRelay:(NSString*)cellText
-{
-    if (textLabel != nil)
-    {
-        textLabel.text = cellText;
-    }
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +36,8 @@
     [super viewDidLoad];
     
     textLabel.text = detailLabelText;
+    
+    detailView.text = detailViewText;
     // Do any additional setup after loading the view from its nib.
 }
 

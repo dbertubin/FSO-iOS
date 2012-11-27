@@ -15,19 +15,18 @@
 @implementation ViewController
 
 
-
-// custom delegate relays info from AddEvent
--(void)eventRelay:(NSString *)eventString
-{
-    if (eventData != nil) {
-        eventData = [eventData stringByAppendingString:eventString];
-    }
-    else
-    {
-        eventData = [NSString stringWithFormat:@"%@",eventString];
-    }
-  //  eventList.text = eventData;
-}
+//// custom delegate relays info from AddEvent
+//-(void)eventRelay:(NSString *)eventString
+//{
+//    if (eventData != nil) {
+//        eventData = [eventData stringByAppendingString:eventString];
+//    }
+//    else
+//    {
+//        eventData = [NSString stringWithFormat:@"%@",eventString];
+//    }
+//  //  eventList.text = eventData;
+//}
 
 
 - (void)viewDidLoad
@@ -93,6 +92,31 @@
                    @"Thing 22",
                    nil];
     
+    stringArrayDetails = [[NSMutableArray alloc] initWithObjects:
+                          @"Thing 1 is first!",
+                          @"Thing 2 is second!",
+                          @"Thing 3 is Third!",
+                          @"Thing 4 is Fourth!",
+                          @"Thing 5 is Fifth!",
+                          @"Thing 6 is Sixth!",
+                          @"Thing 7 is Seventh!",
+                          @"Thing 8 is Eighth!",
+                          @"Thing 9 is Ninth!",
+                          @"Thing 10 is Tenth!",
+                          @"Thing 11 is Eleventh!",
+                          @"Thing 12 is Twelvth!",
+                          @"Thing 13 is Thirteeth!",
+                          @"Thing 14 is Fourteenth!",
+                          @"Thing 15 is Fifteenth!",
+                          @"Thing 16 is Sixtenth!",
+                          @"Thing 17 is Seventeenth!",
+                          @"Thing 18 is Eighteenth!",
+                          @"Thing 19 is Nineteenth!",
+                          @"Thing 20 is Twentieth!",
+                          @"Thing 21 is Twenty First!",
+                          @"Thing 22 is Twenty Second!",
+                          nil];
+    
     }
 
 - (void)didReceiveMemoryWarning
@@ -101,18 +125,18 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)onSwipe:(UISwipeGestureRecognizer* )recognizer
-
-{
-    AddEventScreen * addEvent = [[AddEventScreen alloc] initWithNibName:@"AddEventScreen" bundle:nil];
-    
-    if (addEvent != nil)
-    {
-        addEvent.customAddEventDelegate = self;
-        
-        [self presentViewController:addEvent animated:YES completion: NULL];
-    }
-}
+//-(IBAction)onSwipe:(UISwipeGestureRecognizer* )recognizer
+//
+//{
+//    AddEventScreen * addEvent = [[AddEventScreen alloc] initWithNibName:@"AddEventScreen" bundle:nil];
+//    
+//    if (addEvent != nil)
+//    {
+//        addEvent.customAddEventDelegate = self;
+//        
+//        [self presentViewController:addEvent animated:YES completion: NULL];
+//    }
+//}
 
 //**************** UITableView Stuff ****************************
 
@@ -141,6 +165,8 @@
                 cell = (CustomUITableViewCell* )view;
                 
                 cell.textLabel.text = [stringArray objectAtIndex:indexPath.row];
+                cell.subTextLabel.text = [stringArrayDetails objectAtIndex:indexPath.row];
+                
             }
         }
     }
@@ -160,6 +186,7 @@
         NSLog(@"we want to delelete %d", indexPath.row);
         
         [stringArray removeObjectAtIndex:indexPath.row];
+        [stringArrayDetails removeObjectAtIndex:indexPath.row];
         
         [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:TRUE];
         
@@ -184,6 +211,8 @@
     if (showDetails != nil) {
         
         showDetails.detailLabelText = [stringArray objectAtIndex:indexPath.row];
+        showDetails.detailViewText = [stringArrayDetails objectAtIndex:indexPath.row];
+
         [self presentViewController:showDetails animated:YES completion: NULL];
         NSLog(@"Cell text is %@", cellText);
         

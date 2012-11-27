@@ -19,18 +19,19 @@
 @end
 
 
-@interface ViewController : UIViewController <AddEventDelegate>
+@interface ViewController : UIViewController //<AddEventDelegate>
 
 {
 
     //IBOutlets
     IBOutlet UITableView * eventList;
-    IBOutlet UILabel * addSwipe;
+//    IBOutlet UILabel * addSwipe;
     IBOutlet UIButton * editButton;
     IBOutlet UIButton * infoButton;
    
     // Array
-    NSMutableArray *stringArray;
+    NSMutableArray * stringArray;
+    NSMutableArray * stringArrayDetails;
     
     // vars 
     NSString *eventData;
@@ -52,11 +53,11 @@
     BOOL isTopView;
     BOOL isInEdit;
     IBOutlet UIView * topView;
-    IBOutlet UIView * bottomView;
+//    IBOutlet UIView * bottomView;
 }
 
 
--(IBAction)onSwipe:(UISwipeGestureRecognizer*)recognizer;
+//-(IBAction)onSwipe:(UISwipeGestureRecognizer*)recognizer;
 -(IBAction)onClick:(UIButton* )sender;
 //-(IBAction)sideViewPresent:(UIButton* )sender;
 

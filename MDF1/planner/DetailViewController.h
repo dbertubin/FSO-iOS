@@ -13,11 +13,13 @@
 @interface DetailViewController : UIViewController  // <DetailDelegate> //If you uncomment this out it will say that the DetailDelegate protocol cannot be found ... I dont know why
 
 @property NSString * detailLabelText;
+@property NSString * detailViewText;
 
 
     // IB vars 
 @property (weak, nonatomic)IBOutlet UILabel * textLabel;
 @property (weak, nonatomic)IBOutlet UIButton * backButton;
+@property (weak, nonatomic)IBOutlet UITextView * detailView; 
 
 
 -(IBAction)onClick:(UIButton* )sender;
