@@ -7,12 +7,17 @@
 //
 
 #import "DetailViewController.h"
+#import "ViewController.h"
 
 @interface DetailViewController ()
 
 @end
 
 @implementation DetailViewController
+
+@synthesize detailLabelText;
+@synthesize textLabel;
+@synthesize backButton;
 
 // Feeds data from UITableView Cell to Detail Label
 -(void)detailRelay:(NSString*)cellText
@@ -35,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    textLabel.text = detailLabelText;
     // Do any additional setup after loading the view from its nib.
 }
 

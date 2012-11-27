@@ -10,7 +10,7 @@
 
 @interface CustomUITableViewCell : UITableViewCell
 {
-    IBOutlet UILabel * textLabel;
+@property   IBOutlet UILabel * textLabel;
 
 }
 

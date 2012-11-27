@@ -22,12 +22,7 @@
 @interface ViewController : UIViewController <AddEventDelegate>
 
 {
-    
-    // Custom Delegate
-    
-    id <DetailDelegate> customDetailDelegate;
-    
-    
+
     //IBOutlets
     IBOutlet UITableView * eventList;
     IBOutlet UILabel * addSwipe;
@@ -59,8 +54,6 @@
     IBOutlet UIView * topView;
     IBOutlet UIView * bottomView;
 }
-
-@property (strong) id  <DetailDelegate> customDetailDelegate;
 
 
 -(IBAction)onSwipe:(UISwipeGestureRecognizer*)recognizer;

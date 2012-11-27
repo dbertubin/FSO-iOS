@@ -14,7 +14,7 @@
 
 @implementation ViewController
 
-@synthesize customDetailDelegate;
+
 
 // custom delegate relays info from AddEvent
 -(void)eventRelay:(NSString *)eventString
@@ -173,16 +173,18 @@
 {
     
     
-    if (customDetailDelegate != nil) {
-        [customDetailDelegate detailRelay:cellText];
-    }
+//    if (customDetailDelegate != nil) {
+//        [customDetailDelegate detailRelay:cellText];
+//    }
+    
     
     
     DetailViewController * showDetails = [[DetailViewController alloc] initWithNibName:(@"DetailViewController") bundle:nil];
     
     if (showDetails != nil) {
+        
+        showDetails.detailLabelText = [stringArray objectAtIndex:indexPath.row];
         [self presentViewController:showDetails animated:YES completion: NULL];
-        cellText  = [stringArray objectAtIndex:indexPath.row];
         NSLog(@"Cell text is %@", cellText);
         
     }

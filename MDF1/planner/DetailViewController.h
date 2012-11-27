@@ -10,14 +10,15 @@
 #import "ViewController.h"
 
                                                 
-@interface DetailViewController : UIViewController   <DetailDelegate> //If you uncomment this out it will say that the DetailDelegate protocol cannot be found ... I dont know why
+@interface DetailViewController : UIViewController  // <DetailDelegate> //If you uncomment this out it will say that the DetailDelegate protocol cannot be found ... I dont know why
+
+@property NSString * detailLabelText;
 
 
-{
-    
-    IBOutlet UILabel * textLabel;
-    IBOutlet UIButton * backButton;
-}
+    // IB vars 
+@property (weak, nonatomic)IBOutlet UILabel * textLabel;
+@property (weak, nonatomic)IBOutlet UIButton * backButton;
+
 
 -(IBAction)onClick:(UIButton* )sender;
 
