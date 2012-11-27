@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 
-
-@interface DetailViewController : UIViewController  // <DetailDelegate>
+                                                
+@interface DetailViewController : UIViewController   <DetailDelegate> //If you uncomment this out it will say that the DetailDelegate protocol cannot be found ... I dont know why
 
 
 {

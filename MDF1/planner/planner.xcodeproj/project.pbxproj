@@ -48,7 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4569AE6B16642EE5003A2FFA /* LabelImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LabelImage.png; path = ../../../../../Desktop/Assets/LabelImage.png; sourceTree = "<group>"; };
+		4569AE6B16642EE5003A2FFA /* LabelImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LabelImage.png; path = ../LabelImage.png; sourceTree = "<group>"; };
 		456D93B71661F49400F5696E /* NewIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewIcon@2x.png"; path = "../NewIcon@2x.png"; sourceTree = "<group>"; };
 		456D93BA1661F56A00F5696E /* NewIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewIcon.png; path = ../NewIcon.png; sourceTree = "<group>"; };
 		456D93BC1661F57800F5696E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
