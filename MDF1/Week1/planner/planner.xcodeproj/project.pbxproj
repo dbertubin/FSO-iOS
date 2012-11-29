@@ -58,8 +58,8 @@
 		45026C941666CF430058C7CE /* FlowChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowChartViewController.h; sourceTree = "<group>"; };
 		45026C951666CF440058C7CE /* FlowChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowChartViewController.m; sourceTree = "<group>"; };
 		45026C961666CF440058C7CE /* FlowChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlowChartViewController.xib; sourceTree = "<group>"; };
-		45026C991666E2590058C7CE /* list view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list view.png"; path = "planner/list view.png"; sourceTree = "<group>"; };
-		45026C9B1666E2C60058C7CE /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Add.png; path = planner/Add.png; sourceTree = "<group>"; };
+		45026C991666E2590058C7CE /* list view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list view.png"; path = "planner/list view.png"; sourceTree = SOURCE_ROOT; };
+		45026C9B1666E2C60058C7CE /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Add.png; path = planner/Add.png; sourceTree = SOURCE_ROOT; };
 		45026C9D1666E3A00058C7CE /* Views.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Views.png; path = planner/Views.png; sourceTree = "<group>"; };
 		4569AE6B16642EE5003A2FFA /* LabelImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LabelImage.png; sourceTree = "<group>"; };
 		456D93BC1661F57800F5696E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
