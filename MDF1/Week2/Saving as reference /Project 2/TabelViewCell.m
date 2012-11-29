@@ -1,17 +1,16 @@
 //
-//  CustomCell.m
-//  project 2
+//  TabelViewCell.m
+//  Project 2
 //
 //  Created by Derek Bertubin on 11/28/12.
 //  Copyright (c) 2012 Derek Bertubin. All rights reserved.
 //
 
-#import "CustomCell.h"
+#import "TabelViewCell.h"
 
-@implementation CustomCell
+@implementation TabelViewCell
 
-@synthesize textLabel;
-
+@synthesize cellLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

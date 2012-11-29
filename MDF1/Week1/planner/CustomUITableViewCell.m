@@ -1,17 +1,16 @@
 //
-//  CustomCell.m
-//  project 2
+//  CustomUITableViewCell.m
+//  planner
 //
-//  Created by Derek Bertubin on 11/28/12.
+//  Created by Derek Bertubin on 11/26/12.
 //  Copyright (c) 2012 Derek Bertubin. All rights reserved.
 //
 
-#import "CustomCell.h"
+#import "CustomUITableViewCell.h"
 
-@implementation CustomCell
+@implementation CustomUITableViewCell
 
-@synthesize textLabel;
-
+@synthesize subTextLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -1,6 +1,6 @@
 //
 //  TableViewController.m
-//  project 2
+//  Week2
 //
 //  Created by Derek Bertubin on 11/28/12.
 //  Copyright (c) 2012 Derek Bertubin. All rights reserved.
@@ -13,8 +13,6 @@
 @end
 
 @implementation TableViewController
-
-@synthesize dataArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,14 +28,10 @@
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
-     self.clearsSelectionOnViewWillAppear = NO;
+    // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-
-    dataArray = [[NSMutableArray alloc] initWithObjects:@"test items",@"test items 2", nil];
-    
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,47 +42,33 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-////#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return dataArray.count;
-//    
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return dataArray.count;
+    return 0;
 }
 
-- (CustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * CellIdentifier = @"Cell";
-    
-    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil)
-    {
-        //        cell = [[CustomUITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-        NSArray * views = [[NSBundle mainBundle] loadNibNamed:@"" owner:nil options:nil];
-        
-        for (UIView* view in views) {
-            if ([view isKindOfClass:[CustomCell class]])
-            {
-                cell = (CustomCell* )view;
-                
-                cell.textLabel.text = [dataArray objectAtIndex:indexPath.row];
-                //cell.subTextLabel.text = [stringArrayDetails objectAtIndex:indexPath.row];
-                
-            }
-        }
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
+    // Configure the cell...
     
     return cell;
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,7 +78,7 @@
 }
 */
 
-
+/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -110,14 +90,14 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
+*/
 
-
-
+/*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 }
-
+*/
 
 /*
 // Override to support conditional rearranging of the table view.
@@ -134,11 +114,11 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     /*
-     DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-}   
+}
 
 @end
