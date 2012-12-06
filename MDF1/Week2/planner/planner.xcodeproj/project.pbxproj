@@ -18,9 +18,6 @@
 		456D0B1F166748B1001689FB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456D0B1D166748B0001689FB /* WebViewController.m */; };
 		456D0B20166748B1001689FB /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 456D0B1E166748B0001689FB /* WebViewController.xib */; };
 		456D0B2B166849CA001689FB /* flowchart.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D0B2A166849CA001689FB /* flowchart.png */; };
-		456D0B4916686C54001689FB /* launchLegacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D0B4616686C53001689FB /* launchLegacy.png */; };
-		456D0B4A16686C54001689FB /* launchRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D0B4716686C53001689FB /* launchRetina.png */; };
-		456D0B4B16686C54001689FB /* legacyRetina4.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D0B4816686C53001689FB /* legacyRetina4.png */; };
 		456D0B4C16686C6F001689FB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D0B4216686BD4001689FB /* Default.png */; };
 		456D0B4D16686C76001689FB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D0B4416686BDE001689FB /* Default@2x.png */; };
 		456D93C11661F58F00F5696E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 456D93C01661F58F00F5696E /* Default-568h@2x.png */; };
@@ -71,9 +68,6 @@
 		456D0B2A166849CA001689FB /* flowchart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flowchart.png; sourceTree = "<group>"; };
 		456D0B4216686BD4001689FB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		456D0B4416686BDE001689FB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		456D0B4616686C53001689FB /* launchLegacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launchLegacy.png; path = ../../../../../Desktop/Assets/launchLegacy.png; sourceTree = "<group>"; };
-		456D0B4716686C53001689FB /* launchRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launchRetina.png; path = ../../../../../Desktop/Assets/launchRetina.png; sourceTree = "<group>"; };
-		456D0B4816686C53001689FB /* legacyRetina4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = legacyRetina4.png; path = ../../../../../Desktop/Assets/legacyRetina4.png; sourceTree = "<group>"; };
 		456D93C01661F58F00F5696E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		456D942B1663485400F5696E /* CustomUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomUITableViewCell.h; path = ../CustomUITableViewCell.h; sourceTree = "<group>"; };
 		456D942C1663485400F5696E /* CustomUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomUITableViewCell.m; path = ../CustomUITableViewCell.m; sourceTree = "<group>"; };
@@ -138,9 +132,6 @@
 				456D93C01661F58F00F5696E /* Default-568h@2x.png */,
 				45026CA81666F3A50058C7CE /* NewIcon.png */,
 				456D0B2A166849CA001689FB /* flowchart.png */,
-				456D0B4616686C53001689FB /* launchLegacy.png */,
-				456D0B4716686C53001689FB /* launchRetina.png */,
-				456D0B4816686C53001689FB /* legacyRetina4.png */,
 				45026CAA1666F3C00058C7CE /* NewIcon@2x.png */,
 				45026C991666E2590058C7CE /* list view.png */,
 				45026C9B1666E2C60058C7CE /* Add.png */,
@@ -316,9 +307,6 @@
 				45026CAB1666F3C00058C7CE /* NewIcon@2x.png in Resources */,
 				456D0B20166748B1001689FB /* WebViewController.xib in Resources */,
 				456D0B2B166849CA001689FB /* flowchart.png in Resources */,
-				456D0B4916686C54001689FB /* launchLegacy.png in Resources */,
-				456D0B4A16686C54001689FB /* launchRetina.png in Resources */,
-				456D0B4B16686C54001689FB /* legacyRetina4.png in Resources */,
 				456D0B4C16686C6F001689FB /* Default.png in Resources */,
 				456D0B4D16686C76001689FB /* Default@2x.png in Resources */,
 			);

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		45026C3E166691240058C7CE /* NewIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45026C3C166691240058C7CE /* NewIcon.png */; };
-		45026C3F166691240058C7CE /* NewIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45026C3D166691240058C7CE /* NewIcon@2x.png */; };
 		45026C971666CF440058C7CE /* FlowChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45026C951666CF440058C7CE /* FlowChartViewController.m */; };
 		45026C981666CF440058C7CE /* FlowChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45026C961666CF440058C7CE /* FlowChartViewController.xib */; };
 		45026C9A1666E2590058C7CE /* list view.png in Resources */ = {isa = PBXBuildFile; fileRef = 45026C991666E2590058C7CE /* list view.png */; };
@@ -54,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		45026C3C166691240058C7CE /* NewIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewIcon.png; path = ../../../../../Desktop/Assets/NewIcon.png; sourceTree = "<group>"; };
-		45026C3D166691240058C7CE /* NewIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewIcon@2x.png"; path = "../../../../../Desktop/Assets/NewIcon@2x.png"; sourceTree = "<group>"; };
 		45026C941666CF430058C7CE /* FlowChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowChartViewController.h; sourceTree = "<group>"; };
 		45026C951666CF440058C7CE /* FlowChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowChartViewController.m; sourceTree = "<group>"; };
 		45026C961666CF440058C7CE /* FlowChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlowChartViewController.xib; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				456D93BE1661F58700F5696E /* Default@2x.png */,
 				456D93BC1661F57800F5696E /* Default.png */,
 				45026C3C166691240058C7CE /* NewIcon.png */,
-				45026C3D166691240058C7CE /* NewIcon@2x.png */,
 				45026C991666E2590058C7CE /* list view.png */,
 				45026C9B1666E2C60058C7CE /* Add.png */,
 				45026C9D1666E3A00058C7CE /* Views.png */,
@@ -303,7 +300,6 @@
 				456D943616635C3400F5696E /* DetailViewController.xib in Resources */,
 				4569AE6C16642EE5003A2FFA /* LabelImage.png in Resources */,
 				45026C3E166691240058C7CE /* NewIcon.png in Resources */,
-				45026C3F166691240058C7CE /* NewIcon@2x.png in Resources */,
 				45026C981666CF440058C7CE /* FlowChartViewController.xib in Resources */,
 				45026C9A1666E2590058C7CE /* list view.png in Resources */,
 				45026C9C1666E2C60058C7CE /* Add.png in Resources */,
