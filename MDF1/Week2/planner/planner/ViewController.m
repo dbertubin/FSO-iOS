@@ -47,31 +47,31 @@
     
     [super viewDidLoad];
     
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
- //   self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self.navigationItem.rightBarButtonItem action:@selector(onClick:)];
-    isInEdit = FALSE;
-    
-    // checks to see if NSUserDefaults is empty
-    if(![[NSUserDefaults standardUserDefaults]objectForKey:@"eventText"])
-    {   // if so use initial string
-  //      eventList.text = @"Events are listed Here!";
-    }
-    else
-    {   // if not empy then use the stored info
-        setDefaults = [NSUserDefaults standardUserDefaults];
-        if (setDefaults != nil)
-        {
-            // retrive data using key and set it to string
-            eventData = [setDefaults objectForKey:@"eventText"];
-            eventTextWithOldData = [NSString stringWithFormat:@"%@", eventData];
-            
-            
-        }
-        // set eventData used in as the displayed data in Viewcontroller
-    //    eventList.text = eventTextWithOldData;
-    }
+//    
+//    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+// //   self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self.navigationItem.rightBarButtonItem action:@selector(onClick:)];
+//    isInEdit = FALSE;
+//    
+//    // checks to see if NSUserDefaults is empty
+//    if(![[NSUserDefaults standardUserDefaults]objectForKey:@"eventText"])
+//    {   // if so use initial string
+//  //      eventList.text = @"Events are listed Here!";
+//    }
+//    else
+//    {   // if not empy then use the stored info
+//        setDefaults = [NSUserDefaults standardUserDefaults];
+//        if (setDefaults != nil)
+//        {
+//            // retrive data using key and set it to string
+//            eventData = [setDefaults objectForKey:@"eventText"];
+//            eventTextWithOldData = [NSString stringWithFormat:@"%@", eventData];
+//            
+//            
+//        }
+//        // set eventData used in as the displayed data in Viewcontroller
+//    //    eventList.text = eventTextWithOldData;
+//    }
  
     // feeds the cell.mainLabel
     stringArray = [[ NSMutableArray alloc] initWithObjects:
