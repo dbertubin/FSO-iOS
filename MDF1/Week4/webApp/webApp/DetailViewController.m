@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "FirstViewController.h"
 
 @interface DetailViewController ()
 
@@ -14,7 +15,8 @@
 
 @implementation DetailViewController
 
-@synthesize textView;
+@synthesize textView,textViewText;
+
 @synthesize temp,updated,name, weather;
 @synthesize weatherLabelText,tempLabelText,updatedLabelText,nameLabelText;
 
@@ -31,11 +33,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    weather.text = weatherLabelText;
-    name.text = nameLabelText;
-    updated.text = updatedLabelText;
-    temp.text = tempLabelText;
-    
+//    weather.text = weatherLabelText;
+//    name.text = nameLabelText;
+//    updated.text = updatedLabelText;
+//    temp.text = tempLabelText;
+    textView.text = textViewText;
 }
 
 - (void)didReceiveMemoryWarning

@@ -29,6 +29,8 @@
 		455E01091679634C006DC8B5 /* LocationDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 455E01081679634C006DC8B5 /* LocationDetails.m */; };
 		455E010E16796376006DC8B5 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 455E010C16796376006DC8B5 /* CustomTableViewCell.xib */; };
 		455E010F16796376006DC8B5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 455E010D16796376006DC8B5 /* CustomTableViewCell.m */; };
+		455F76CE167A5DCC00723D05 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 455F76CC167A5DCB00723D05 /* LocationViewController.m */; };
+		455F76CF167A5DCC00723D05 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 455F76CD167A5DCC00723D05 /* LocationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,11 +60,14 @@
 		455298671676E14B00CF2F5E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		455298681676E14B00CF2F5E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		455298691676E14B00CF2F5E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		455E01071679634C006DC8B5 /* LocationDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationDetails.h; path = webApp/LocationDetails.h; sourceTree = "<group>"; };
-		455E01081679634C006DC8B5 /* LocationDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationDetails.m; path = webApp/LocationDetails.m; sourceTree = "<group>"; };
+		455E01071679634C006DC8B5 /* LocationDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetails.h; sourceTree = "<group>"; };
+		455E01081679634C006DC8B5 /* LocationDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetails.m; sourceTree = "<group>"; };
 		455E010B16796376006DC8B5 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		455E010C16796376006DC8B5 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		455E010D16796376006DC8B5 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		455F76CB167A5DCB00723D05 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		455F76CC167A5DCB00723D05 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		455F76CD167A5DCC00723D05 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +87,6 @@
 		455298221676DA1300CF2F5E = {
 			isa = PBXGroup;
 			children = (
-				455E01071679634C006DC8B5 /* LocationDetails.h */,
-				455E01081679634C006DC8B5 /* LocationDetails.m */,
 				455298371676DA1300CF2F5E /* webApp */,
 				455298301676DA1300CF2F5E /* Frameworks */,
 				4552982E1676DA1300CF2F5E /* Products */,
@@ -119,9 +122,14 @@
 				455E010B16796376006DC8B5 /* CustomTableViewCell.h */,
 				455E010C16796376006DC8B5 /* CustomTableViewCell.xib */,
 				455E010D16796376006DC8B5 /* CustomTableViewCell.m */,
+				455F76CB167A5DCB00723D05 /* LocationViewController.h */,
+				455F76CC167A5DCB00723D05 /* LocationViewController.m */,
+				455F76CD167A5DCC00723D05 /* LocationViewController.xib */,
 				455298671676E14B00CF2F5E /* DetailViewController.h */,
 				455298681676E14B00CF2F5E /* DetailViewController.m */,
 				455298691676E14B00CF2F5E /* DetailViewController.xib */,
+				455E01071679634C006DC8B5 /* LocationDetails.h */,
+				455E01081679634C006DC8B5 /* LocationDetails.m */,
 				4552984C1676DA1300CF2F5E /* first.png */,
 				4552984E1676DA1300CF2F5E /* first@2x.png */,
 				455298501676DA1300CF2F5E /* SecondViewController.h */,
@@ -211,6 +219,7 @@
 				4552985C1676DA1300CF2F5E /* SecondViewController.xib in Resources */,
 				4552986B1676E14B00CF2F5E /* DetailViewController.xib in Resources */,
 				455E010E16796376006DC8B5 /* CustomTableViewCell.xib in Resources */,
+				455F76CF167A5DCC00723D05 /* LocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +237,7 @@
 				4552986A1676E14B00CF2F5E /* DetailViewController.m in Sources */,
 				455E01091679634C006DC8B5 /* LocationDetails.m in Sources */,
 				455E010F16796376006DC8B5 /* CustomTableViewCell.m in Sources */,
+				455F76CE167A5DCC00723D05 /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,7 @@
 @property NSString * updatedLabelText;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property NSString * textViewText;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *temp;
 @property  IBOutlet UILabel *weather;

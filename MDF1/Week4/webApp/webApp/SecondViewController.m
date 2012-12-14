@@ -14,21 +14,46 @@
 
 @implementation SecondViewController
 
+@synthesize xmlText;
+@synthesize rawXMLTextView;
+@synthesize locationArray,locationDetailURLArray;
+@synthesize dataDelegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Second", @"Second");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
-    }
+    
+           }
     return self;
 }
-							
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+// Do any additional setup after loading the view, typically from a nib.
+//    xmlText = [dataDelegate xmlDataString];
+//    rawXMLTextView.text = xmlText;
+//
+//    NSLog(@"%@",xmlText);
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+    
+    [super viewDidAppear:true];
+    
+    xmlText = [dataDelegate xmlDataString];
+    rawXMLTextView.text = xmlText;
+    
+    NSLog(@"%@",xmlText);
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

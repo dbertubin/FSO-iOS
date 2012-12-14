@@ -1,26 +1,24 @@
 //
-//  FirstViewController.m
+//  LocationViewController.m
 //  webApp
 //
-//  Created by Derek Bertubin on 12/10/12.
+//  Created by Derek Bertubin on 12/13/12.
 //  Copyright (c) 2012 Derek Bertubin. All rights reserved.
 //
 
-#import "FirstViewController.h"
-#import "DetailViewController.h"
+#import "LocationViewController.h"
 
-@interface FirstViewController ()
+@interface LocationViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation LocationViewController
 
 @synthesize locationTableView;
 
-//@synthesize isInEditMode;
+@synthesize isInEditMode;
 
 @synthesize url, request, connection, requestData;
-@synthesize urlArray;
 
 @synthesize requestString;
 @synthesize xmlData;
@@ -30,8 +28,10 @@
 
 @synthesize currentElement, ElementValue;
 @synthesize article;
+@synthesize articleDetails;
 @synthesize item;
 
+@synthesize xmlUrlString;
 @synthesize name;
 @synthesize nameTitle;
 @synthesize obTime;
@@ -41,16 +41,13 @@
 @synthesize weather;
 @synthesize weatherTitle;
 @synthesize itemString;
-@synthesize isParsing;
-
+@synthesize parseController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {
-        self.title = NSLocalizedString(@"First", @"First");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+    if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -58,54 +55,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //    //	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
     
     
     
-#pragma mark -Location Arrays
+	// Do any additional setup after loading the view, typically from a nib.
+    //When the application launches, using NSURLRequest, build a url and request data from a web service of your choice. The data from the request will be placed into a NSMutableData object. The request MUST be asynchronous.
     
-    locationArray = [[NSMutableArray alloc]initWithObjects:
-                     @"Orlando, FL",
-                     @"Miami, FL",
-                     @"Tampa, FL",
-                     @"New York, NY",
-                     @"Providence, RI",
-                     nil];
-    
-    locationDetailURLArray = [[NSMutableArray alloc]initWithObjects:
-                              @"http://w1.weather.gov/xml/current_obs/KMCO.xml",
-                              @"http://w1.weather.gov/xml/current_obs/KMIA.xml",
-                              @"http://w1.weather.gov/xml/current_obs/KTPA.xml",
-                              @"http://w1.weather.gov/xml/current_obs/KNYC.xml",
-                              @"http://w1.weather.gov/xml/current_obs/KPVD.xml",
-                              nil];
-    
-    for (int i=0; i <= [locationDetailURLArray count] - 1; i++){
-        [self getXML:[locationDetailURLArray objectAtIndex:i]];
-    }
-    
-    
-    
-}
-
-
-- (void)getXML:(NSString *)xmlUrlString
-{
-    // create the URL object with the first weather location
-    url = [[NSURL alloc] initWithString:xmlUrlString];
-    
-    
-    if (url != nil)
+    url = [[NSURL alloc] initWithString:self.xmlUrlString];
+    NSLog(@"%@", url);
+    request = [[NSURLRequest alloc]initWithURL:url];
+    if (request != nil)
     {
-        request = [[NSURLRequest alloc] initWithURL:url];
-        
-        if (request != nil)
-        {
-            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        }
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     }
+    
+    // Mutable Data Object
+    requestData = [NSMutableData data];
+    
+    
+    
 }
-
 
 #pragma mark -Connection Handler
 
@@ -117,16 +87,15 @@
         [requestData appendData:data];
     }
     
+    
 }
 
-
-// called once all data is loaded
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    requestString = [[NSString alloc]initWithData:requestData encoding:
-                    NSASCIIStringEncoding];
-
-    
+    requestString = [[NSString alloc]initWithData:requestData encoding:NSASCIIStringEncoding];
+    if (requestString != nil) {
+        //    NSLog(@"%@", requestString);
+    }
     
     parser = [[NSXMLParser alloc]initWithData:requestData];
     
@@ -137,22 +106,22 @@
     }
     
     
+}
+
+#pragma mark -Parsing Starts Here
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    currentElement = [elementName copy];
+    ElementValue = [[NSMutableString alloc] init];
+    
+    parseController = false;
     
 }
 
 
-#pragma mark -Parsing
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
-    currentElement = [elementName copy];
-    ElementValue = [[NSMutableString alloc] init];
-    isParsing = false;
-}
-
-
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    if (isParsing == false)
+    if (parseController == false)
     {
-        isParsing = true;
+        parseController = true;
         if (ElementValue != nil) {
             // init the ad hoc string with the value
             ElementValue = [[NSMutableString alloc] initWithString:string];
@@ -163,8 +132,12 @@
     }
 }
 
+
+
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    
+    
     if ([elementName isEqualToString:@"location"])
     {
         item = [[NSMutableDictionary alloc]init];
@@ -212,6 +185,19 @@
         }
         NSLog(@"Weather is %@", weather);
     }
+    
+    article = [[NSMutableArray alloc]initWithObjects:
+               self.nameTitle,
+               self.tempTitle,
+               self.weatherTitle,
+               self.obTimeTitle,
+               nil];
+    articleDetails = [[NSMutableArray alloc] initWithObjects:
+                      self.name,
+                      self.temp,
+                      self.weather,
+                      self.obTime,
+                      nil];
 }
 
 
@@ -221,11 +207,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return locationArray.count;
+    return article.count;
+    
 }
 
 
@@ -235,6 +221,7 @@
 //    {
 //        NSLog(@"we want to delelete %d", indexPath.row);
 //
+//        [DataDelegate.annoList removeObjectAtIndex:indexPath.row];
 //        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:TRUE];
 //
 //    }
@@ -261,8 +248,9 @@
                 cell = (CustomTableViewCell* )view;
                 
                 
-                cell.textLabel.text = [locationArray objectAtIndex:indexPath.row];
-                cell.subTextLabel.text =@""; //[locationDetailURLArray objectAtIndex:indexPath.row];
+                cell.textLabel.text = [article objectAtIndex:indexPath.row];
+                
+                cell.subTextLabel.text = [articleDetails objectAtIndex:indexPath.row];
                 
             }
         }
@@ -274,92 +262,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    LocationViewController * locationView = [[LocationViewController alloc] initWithNibName:(@"LocationViewController") bundle:nil];
+
+    
+    DetailViewController * detailView = [[DetailViewController alloc] initWithNibName:(@"DetailViewController") bundle:nil];
     {
-        if (locationView !=nil) {
-            article = [[NSMutableArray alloc]initWithObjects:
-                       nameTitle,
-                       obTimeTitle,
-                       tempTitle,
-                       weatherTitle,
-                       nil];
-            if (article != nil) {
-                locationView.xmlUrlString = [locationDetailURLArray objectAtIndex:indexPath.row];
-                locationView.article = self.article;
-            }
-            
+        if (detailView !=nil) {
+            detailView.textViewText = [NSString stringWithFormat:@"%@: \n%@",[article objectAtIndex:indexPath.row],[articleDetails objectAtIndex:indexPath.row] ];
         }
         
-        [self.navigationController pushViewController:locationView animated:YES];
-        
+        [self.navigationController pushViewController:detailView animated:YES];
         
     }
     
-    SecondViewController * secondView = [[SecondViewController alloc] initWithNibName:(@"SecondViewController") bundle:nil];
-    {
-        if (secondView !=nil)
-        {
-            secondView.xmlText = [locationDetailURLArray objectAtIndex:indexPath.row];
-            //   secondView.article = self.article;
-        }
-    
-    }
-    
-    
-    
-    
     
 }
-
-- (NSString *)xmlDataString
-{
-    return requestString;
-}
-
-
-
-
-//-(IBAction)onClick:(id)sender
-//{
-//    if (isInEditMode == NO)
-//    {
-//        [locationTableView setEditing:TRUE];
-//        //   [editButton setTitle:@"Done" forState:UIControlStateNormal];
-//        isInEditMode= YES;
-//        //        editButton.title = @"Done";
-//    }
-//    else
-//    {
-//        [locationTableView setEditing:FALSE];
-//        //    [editButton setTitle:@"Edit " forState:UIControlStateNormal
-//
-//        isInEditMode = NO;
-//        //        editButton.title = @"Edit";
-//
-//
-//    }
-//
-//
-//
-//}
-
 
 
 
 @end
-
-
-#pragma mark -Instrcutions
-
-//First Tab view
-
-//When the application launches, using NSURLRequest, build a url and request data from a web service of your choice. The data from the request will be placed into a NSMutableData object. The request MUST be asynchronous.
-
-//Parse this data using the NSXMLParser and place the data into objects appropriate for this type of data. Parser MUST parse the most current data from the server.
-
-//Present the data in a UITableView. Each cell should represent one of the items in the xml. For instance, a list of movies, each cell would display the details for one movie.
-
-//Selecting an item in the list will move to an item details view.
-
-//Item detail view
-//Using a UITextView, display the xml for this selected item as text.
